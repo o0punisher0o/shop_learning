@@ -1,0 +1,17 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Shop{% endblock title %}
+
+{% block content %}
+    <h1 class="rev-head text-uppercase" id="shop-title">Shop interlude - ALL</h1>
+    <div class="catalog d-flex">
+        <form action="{%{% url "main:catalog" %}}" method="get" class="sidebar" id="filter-form">
+            <h4 class="price-head">Price Range:</h4>
+            <div class="price-range">
+                <input type="number" name="min_price" id="min_price" placeholder="Min price" value="{{ request.GET.min_price }}" oninput="">
+                <input type="number" name="max_price" id="max_price" placeholder="Max price" value="{{ request.GET.max_price }}" oninput="">
+            </div>
+        </form>
+    </div>
+{% endblock content %}
